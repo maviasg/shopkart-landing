@@ -1,0 +1,67 @@
+/*
+  Design tokens — PLACEHOLDER values.
+  Once the real Figma spec is available, update ONLY the values in this
+  block (fonts, sizes, colors) to match it. Nothing else in the app should
+  need to change.
+*/
+:root {
+  --font-heading: "Playfair Display", Georgia, serif;
+  --font-body: "Inter", system-ui, "Segoe UI", Roboto, sans-serif;
+
+  --text: #5a5560;
+  --text-h: #1c1a1f;
+  --bg: #fffdf9;
+  --border: #e7e2d9;
+  --accent: #a3703c;
+
+  --fs-page-title: 40px;
+  --fs-section-title: 24px;
+  --fs-item-name: 18px;
+  --fs-item-description: 15px;
+  --fs-price: 16px;
+  --fs-small: 13px;
+
+  color-scheme: light dark;
+  color: var(--text);
+  background: var(--bg);
+  font: 16px/150% var(--font-body);
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text: #c7c2cc;
+    --text-h: #f3f1f5;
+    --bg: #1b191d;
+    --border: #35323a;
+    --accent: #d8a46a;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+#root {
+  max-width: 720px;
+  margin: 0 auto;
+  min-height: 100svh;
+}
+
+h1,
+h2 {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  color: var(--text-h);
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
