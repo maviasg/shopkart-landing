@@ -1,9 +1,10 @@
 /*
   Design tokens, pulled from the Figma "Styleguide" page.
-  Colors below are a visual estimate from the swatches — replace the five
-  --color-* values with the exact hex codes from Figma (click each color
-  style: Primary colour, Grey scale 1000, Greyscale 400, Grey scale 000,
-  Grey Scale 200) once available. Nothing else should need to change.
+  Primary colour, Grey scale 1000, and Greyscale 400 are the exact hex
+  values from Figma's color styles. Grey scale 200 and Grey scale 000
+  weren't visible as swatches on the Styleguide canvas, these two are a
+  standard-convention estimate (000 = white, 200 = near-white) — replace
+  them if the real values turn up elsewhere in the file.
 */
 :root {
   --font-display: "Syne", sans-serif;
@@ -17,12 +18,11 @@
   --fs-body-14: 14px;
   --lh-body-14: 18px;
 
-  /* TODO: replace with exact hex from Figma Styleguide color styles */
-  --color-primary: #e08a3e; /* "Primary colour" (orange) */
-  --color-grey-1000: #000000; /* "Grey scale 1000" (black) */
-  --color-grey-400: #9b9b9b; /* "Greyscale 400" (mid grey) */
-  --color-grey-200: #e5e5e5; /* "Grey Scale 200" (light grey) */
-  --color-grey-000: #ffffff; /* "Grey scale 000" (white) */
+  --color-primary: #f07e15; /* "Primary colour" — exact, from Figma */
+  --color-grey-1000: #000000; /* "Grey scale 1000" — exact, from Figma */
+  --color-grey-400: #8b8b8a; /* "Greyscale 400" (#161615 at 50% opacity, blended over white) — exact, from Figma */
+  --color-grey-200: #e5e5e5; /* "Grey Scale 200" — estimated, not confirmed in Figma */
+  --color-grey-000: #ffffff; /* "Grey scale 000" — estimated, not confirmed in Figma */
 
   color-scheme: light;
   color: var(--color-grey-1000);
