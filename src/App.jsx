@@ -1,23 +1,20 @@
-import menu from "./data/menu";
-import MenuSection from "./components/MenuSection";
+import Header from "./components/Header";
+import Hero from "./components/Hero";
+import ProductGrid from "./components/ProductGrid";
+import Newsletter from "./components/Newsletter";
+import Footer from "./components/Footer";
+import products from "./data/products";
 import "./App.css";
 
 function App() {
   return (
-    <main className="page">
-      <header className="page__header">
-        <h1>Our Menu</h1>
-        <p className="page__subtitle">Freshly made, every day</p>
-      </header>
-
-      {menu.map((section) => (
-        <MenuSection
-          key={section.id}
-          title={section.title}
-          items={section.items}
-        />
-      ))}
-    </main>
+    <div className="page">
+      <Header />
+      <Hero />
+      <ProductGrid products={products} />
+      <Newsletter />
+      <Footer />
+    </div>
   );
 }
 

@@ -1,17 +1,18 @@
-# Menu — Week 4 Assignment
+# ShopKart — Week 4 Assignment
 
-A React implementation of the "Menu" option from the Week 4 frontend assignment.
+A React implementation of the "ShopKart" landing page from the Week 4 frontend assignment Figma file (`FE Assignment`, node `0:1`).
 
-## ⚠️ Status: placeholder design
+## ⚠️ Status: close match, two things still pending
 
-The assignment's exact design spec (Figma link + PDF referenced in the assignment comments, covering required fonts, sizes, colors, and copy) was not available when this was built. Everything here, fonts, colors, spacing, and menu content, is a **placeholder** that follows good typographic practice, not the actual required spec.
+The Figma file is view-only (no edit access was granted), so this was built from:
+- Screenshots of the Desktop and iPhone 14 frames
+- The file's "Styleguide" page (typography scale, color style names)
 
-Once the real spec is available, only two files should need changes to match it exactly:
+Still outstanding:
+- **Exact color hex codes.** `src/index.css` uses visually-estimated hex values for the 5 color styles (Primary colour, Grey scale 1000/400/200/000). Replace the `--color-*` variables there with the real hex values once available (click each color style in Figma's right panel to get it).
+- **Real product/hero images.** Without file export access, product photos and the hero model image are grey placeholder blocks. Swap in the real assets in `Hero.jsx` and `ProductCard.jsx` once exportable.
 
-- **`src/index.css`** — the `:root` block at the top holds every font, color, and font-size value as a CSS variable. Update the values there (not elsewhere in the codebase) to match the spec.
-- **`src/data/menu.js`** — swap in the real section titles, item names, descriptions, and prices.
-
-The component structure (`MenuSection`, `MenuItem`) and layout in `App.css` shouldn't need to change for a content/token swap.
+Everything else (layout, typography sizes/weights, component structure, copy, spacing) was built to match the design as closely as possible from the available screenshots.
 
 ## Setup and running locally
 
@@ -22,33 +23,44 @@ npm run dev
 
 Then open the URL printed in the terminal (typically `http://localhost:5173`).
 
-To build a production bundle:
-
 ```bash
 npm run build
 ```
 
-The output goes to `dist/`, ready to deploy (e.g. to Netlify).
+builds to `dist/`, ready to deploy (e.g. to Netlify).
 
 ## Structure
 
 ```
 src/
   data/
-    menu.js            # section + item content (placeholder)
+    products.js         # placeholder product content
   components/
-    MenuItem.jsx         # one item: name, description, price
-    MenuSection.jsx        # a category heading + its list of items
-  App.jsx                   # renders all sections from menu.js
-  App.css                    # layout styling
-  index.css                   # design tokens: fonts, colors, font sizes
+    Header.jsx            # topbar, nav, "Our Products" dropdown, mobile menu
+    Hero.jsx                # headline, year graphic, hero visual block
+    ProductCard.jsx           # one product tile
+    ProductGrid.jsx             # "New products" section: filters + product row
+    Newsletter.jsx                # contact form + "Get in touch" + send button
+    Footer.jsx                      # copyright line
+  App.jsx                           # assembles the page
+  App.css                            # all layout/visual styling
+  index.css                          # design tokens: fonts, colors, type scale
 ```
 
-## Notes on consistency
+## Design tokens (from the Figma Styleguide page)
 
-Per the assignment's emphasis on attention to detail:
+| Token | Value |
+|---|---|
+| Display font | Syne (Extrabold 800 for H1, Semibold 600 for H2/Subtitles) |
+| Body font | Work Sans (Regular 400) |
+| H1 | 135px |
+| H2 | 90px |
+| Subtitle | 26px |
+| Body | 18px / 14px |
 
-- Item names use title case; descriptions use sentence case, consistently.
-- All prices are right-aligned and share one font/size/color across every item.
-- Section titles share one font/size/color across every section.
-- API integration was not implemented, it was marked optional/advantageous in the assignment, not required.
+## Interactive behaviour implemented
+
+- "Our Products" nav item reveals a dropdown (Product 1–4) on hover.
+- Mobile hamburger menu opens a full-screen nav overlay (closable), matching the iPhone 14 frames.
+- Category filter buttons in "New products" are clickable and track an active state.
+- The contact form (Name/Email/Message) is a controlled form; submitting logs the values and resets the fields.
