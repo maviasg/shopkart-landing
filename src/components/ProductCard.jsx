@@ -1,7 +1,8 @@
-function ProductCard({ name, description, price }) {
+function ProductCard({ name, description, price, image }) {
   return (
     <li className="product-card">
-      <div className="product-card__image" role="img" aria-label={name}>
+      <div className="product-card__image">
+        <img src={image} alt={name} />
         <button type="button" className="product-card__link" aria-label={`View ${name}`}>
           ↗
         </button>

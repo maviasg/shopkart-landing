@@ -42,6 +42,7 @@ function ProductGrid({ products }) {
               name={product.name}
               description={product.description}
               price={product.price}
+              image={product.image}
             />
           ))}
         </ul>

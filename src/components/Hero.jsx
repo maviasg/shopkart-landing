@@ -38,7 +38,12 @@ function Hero() {
       <div className="hero__visual">
         <Starburst />
         <div className="hero__block" />
-        <div className="hero__image" role="img" aria-label="Model wearing the Oregon Jacket" />
+        <div className="hero__image">
+          <img
+            src="https://picsum.photos/seed/shopkart-hero/500/650"
+            alt="Model wearing the Oregon Jacket"
+          />
+        </div>
         <div className="hero__caption">
           <p>Oregon Jacket</p>
           <p>$124</p>
